@@ -64,6 +64,20 @@ class InviteCode extends Model
     }
 
     /**
+     * Is the invite enabled.
+     *
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        if ($this->status == 'enabled') {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
      * Is the invite used times over limit.
      *
      * @return bool
@@ -91,13 +105,13 @@ class InviteCode extends Model
     /**
      * Is the invite restricted for a particular user.
      *
-     * @param string $user
+     * @param string $userId
      *
      * @return bool
      */
-    public function isRestrictedFor($user)
+    public function isRestrictedFor($userId)
     {
-        return $user == $this->for;
+        return $userId == $this->for;
     }
 
     /**
@@ -107,7 +121,7 @@ class InviteCode extends Model
      */
     public function isUseless()
     {
-        return $this->isExpired() || $this->isFull();
+        return $this->isExpired() || $this->isFull() || $this->isEnabled();
     }
 
     /**

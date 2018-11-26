@@ -26,7 +26,7 @@ class CreateInvitesTable extends Migration
 
             $table->string('for')
                 ->nullable()
-                ->comment('邀請碼的專屬使用者 (null 表示都可以使用)');
+                ->comment('邀請碼的專屬使用者 (null 表示所有人都可以使用)');
 
             $table->string('belong_to')
                 ->nullable()

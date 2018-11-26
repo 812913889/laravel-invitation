@@ -32,13 +32,13 @@ class Generator
     }
 
     /**
-     * @param int $amount
+     * @param int $uses
      *
      * @return $this
      */
-    public function uses(int $amount = 0)
+    public function uses(int $uses = 0)
     {
-        $this->uses = $amount;
+        $this->uses = $uses;
 
         return $this;
     }
