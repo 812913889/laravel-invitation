@@ -7,6 +7,7 @@ use Ariby\LaravelInvitation\Exceptions\ExpiredLaravelInvitation;
 use Ariby\LaravelInvitation\Exceptions\LaravelInvitationUsedOverMaxException;
 use Ariby\LaravelInvitation\Exceptions\NotYourLaravelInvitationException;
 use Ariby\LaravelInvitation\Exceptions\NotFoundLaravelInvitationException;
+use Ariby\LaravelInvitation\Models\InviteCode;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Str;
 
@@ -78,10 +79,10 @@ class LaravelInvitation
      * @return \Ariby\LaravelInvitation\LaravelInvitation
      * @throws NotFoundLaravelInvitationException
      */
-    protected function lookupInvite($code): LaravelInvitation
+    protected function lookupInvite($code): InviteCode
     {
         try {
-            return LaravelInvitation::where('code', '=', $code)->firstOrFail();
+            return InviteCode::where('code', '=', $code)->firstOrFail();
         } catch (ModelNotFoundException $e) {
             throw new NotFoundLaravelInvitationException('邀請碼「'.$code.'」不存在');
         }
@@ -95,7 +96,7 @@ class LaravelInvitation
      * @throws LaravelInvitationUsedOverMaxException
      * @throws NotYourLaravelInvitationException
      */
-    protected function validateInvite(LaravelInvitation $invite, string $belongTo = null)
+    protected function validateInvite(InviteCode $invite, string $belongTo = null)
     {
         if ($invite->isFull()) {
             throw new LaravelInvitationUsedOverMaxException('邀請碼「'.$invite->code.'」已超過最大可使用次數');
