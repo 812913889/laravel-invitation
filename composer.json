@@ -1,12 +1,12 @@
 {
-  "name": "ariby/laravel-invitation",
-  "description": "Laravel 邀請碼套件",
+  "name": "lampge/laravel-invitation",
+  "description": "Laravel邀请码组件",
   "type": "library",
   "license": "MIT",
   "authors": [
     {
-      "name": "Ariby",
-      "email": "defsrisars@gmail.com"
+      "name": "lampge",
+      "email": "lampge@sina.com"
     }
   ],
   "require": {
