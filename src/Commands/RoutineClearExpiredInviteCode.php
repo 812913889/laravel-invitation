@@ -12,7 +12,7 @@ class RoutineClearExpiredLaravelInvitation extends Command
     protected $signature = 'routine-clear:clear-expired-invite-codes';
 
     // 說明文字
-    protected $description = '刪除已經過期的邀請碼';
+    protected $description = '刪除已經過期的邀请码';
 
     public function __construct()
     {

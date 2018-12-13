@@ -7,19 +7,19 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 邀請碼
+ * 邀请码
  *
  * Class InviteCode
  * @property string id
- * @property string code 邀請碼
- * @property string status 邀請碼的開放狀態
- * @property string type 邀請碼種類
- * @property string for 邀請碼的專屬使用者 (null 表示都可以使用)
- * @property string belong_to 邀請碼的擁有者
- * @property string made_by 邀請碼的製作者
- * @property int max 邀請碼的最大使用次數
- * @property int uses 邀請碼的已使用次數
- * @property datetime valid_until 邀請碼的有效期限
+ * @property string code 邀请码
+ * @property string status 邀请码的開放狀態
+ * @property string type 邀请码種類
+ * @property string for 邀请码的專屬使用者 (null 表示都可以使用)
+ * @property string belong_to 邀请码的擁有者
+ * @property string made_by 邀请码的製作者
+ * @property int max 邀请码的最大使用次數
+ * @property int uses 邀请码的已使用次數
+ * @property datetime valid_until 邀请码的有效期限
  * @property datetime created_at
  * @property datetime updated_at
  */

@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Artisan;
 
 /**
- * 刪除過期的邀請碼
+ * 刪除過期的邀请码
  *
  * Class CleaExpiredLaravelInvitationJob
  * @package Ariby\LaravelInvitation\Jobs

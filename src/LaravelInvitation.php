@@ -16,7 +16,7 @@ class LaravelInvitation
     public $error = '';
 
     /**
-     * 使用邀請碼(會將使用次數 + 1)
+     * 使用邀请码(會將使用次數 + 1)
      *
      * @param             $code
      * @param string|null $belongTo
@@ -34,7 +34,7 @@ class LaravelInvitation
     }
 
     /**
-     * 尋找邀請碼並驗證狀態是否可使用
+     * 尋找邀请码並驗證狀態是否可使用
      *
      * @param             $code
      * @param string|null $belongTo
@@ -55,7 +55,7 @@ class LaravelInvitation
     }
 
     /**
-     * 檢查此邀請碼是否存在(不會增加使用次數)
+     * 檢查此邀请码是否存在(不會增加使用次數)
      *
      * @param             $code
      * @param string|null $belongTo
@@ -84,7 +84,7 @@ class LaravelInvitation
         try {
             return InviteCode::where('code', '=', $code)->firstOrFail();
         } catch (ModelNotFoundException $e) {
-            throw new NotFoundLaravelInvitationException('邀請碼「'.$code.'」不存在');
+            throw new NotFoundLaravelInvitationException('邀请码「'.$code.'」不存在');
         }
     }
 
@@ -99,15 +99,15 @@ class LaravelInvitation
     protected function validateInvite(InviteCode $invite, string $belongTo = null)
     {
         if ($invite->isFull()) {
-            throw new LaravelInvitationUsedOverMaxException('邀請碼「'.$invite->code.'」已超過最大可使用次數');
+            throw new LaravelInvitationUsedOverMaxException('邀请码「'.$invite->code.'」已超过最大可使用次数');
         }
 
         if ($invite->isExpired()) {
-            throw new ExpiredLaravelInvitation('邀請碼「'.$invite->code.'」已過期');
+            throw new ExpiredLaravelInvitation('邀请码「'.$invite->code.'」已过期');
         }
 
         if ($invite->isRestricted() && !$invite->isRestrictedFor($belongTo)) {
-            throw new NotYourLaravelInvitationException('您沒有此邀請碼的使用權限');
+            throw new NotYourLaravelInvitationException('您沒有此邀请码的使用权限');
         }
     }
 

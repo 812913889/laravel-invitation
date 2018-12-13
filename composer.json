@@ -1,6 +1,6 @@
 {
   "name": "lampge/laravel-invitation",
-  "description": "Laravel 邀請碼套件",
+  "description": "Laravel 邀请码套件",
   "type": "library",
   "license": "MIT",
   "authors": [

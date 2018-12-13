@@ -18,39 +18,39 @@ class CreateInvitesTable extends Migration
                 ->comment('[PK] 資料識別碼');
 
             $table->string('code')
-                ->comment('邀請碼');
+                ->comment('邀请码');
 
             $table->enum('status', ['enabled', 'disabled'])
                 ->default('enabled')
-                ->comment('邀請碼的開放狀態');
+                ->comment('邀请码的開放狀態');
 
             $table->string('for')
                 ->nullable()
-                ->comment('邀請碼的專屬使用者 (null 表示所有人都可以使用)');
+                ->comment('邀请码的專屬使用者 (null 表示所有人都可以使用)');
 
             $table->string('belong_to')
                 ->nullable()
-                ->comment('邀請碼的擁有者');
+                ->comment('邀请码的擁有者');
 
             $table->string('made_by')
                 ->nullable()
-                ->comment('邀請碼的製作者');
+                ->comment('邀请码的製作者');
 
             $table->integer('max')
                 ->nullable()
-                ->comment('邀請碼的最大使用次數');
+                ->comment('邀请码的最大使用次數');
 
             $table->integer('uses')
                 ->default(0)
-                ->comment('邀請碼的已使用次數');
+                ->comment('邀请码的已使用次數');
 
             $table->string('type')
                 ->nullable()
-                ->comment('邀請碼的類型');
+                ->comment('邀请码的類型');
 
             $table->timestamp('valid_until')
                 ->nullable()
-                ->comment('邀請碼的有效期限');
+                ->comment('邀请码的有效期限');
 
             $table->timestamps();
 
